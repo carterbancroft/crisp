@@ -35,5 +35,9 @@
   "contributors": "https://github.com/kathyqian/crisp/graphs/contributors",
   "config": {
     "posts_per_page": 10
+  },
+  "scripts": {
+    "zip": "cd build; zip -r ../crisp.zip ./*",
+    "dev": "rm -rf ../../dev/content/themes/crisp; mkdir ../../dev/content/themes/crisp; cp -rf ./* ../../dev/content/themes/crisp"
   }
 }
