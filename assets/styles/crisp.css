@@ -111,22 +111,6 @@ hr{
 ul, ol {
   margin-left: 3em; 
 }
-code {
-  font-size:1.4em;
-  background: #eee;
-}
-pre {
-  font-size: 0.8em;
-  line-height: 2em;
-  background: #eee;
-  padding: 1em;
-  word-break: break-all;
-  word-wrap: break-word;
-  white-space: pre;
-  white-space: -moz-pre-wrap;
-  white-space: pre-wrap;
-  white-space: pre\9; 
-}
 input {
   font-size:1em;
   padding: 0.3em;
