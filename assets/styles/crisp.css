@@ -177,7 +177,7 @@ header #logo img {
   color: #ccc;
 } 
 #follow-icons a:hover {
-  color: #FF6F61;
+  color: #5cc265;
 }
 #follow-icons span {
   vertical-align:top;
@@ -195,7 +195,7 @@ header h6 a {
   color: #FFF;
 }
 header h6 a:hover {
-  color: #FF6F61;
+  color: #5cc265;
   text-decoration: none;
 }
 
