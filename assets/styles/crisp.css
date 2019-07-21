@@ -145,13 +145,17 @@ input {
 }
 
 /* Sidebar */
+header {
+  background-color: #262626;
+  color: #FFF;
+}
 header h1 {
   font-size:1.9em;
   margin-top:0.8em;
   margin-bottom:0.6em;
 }
 header h1 a {
-  color:#444;
+  color: #FFF;
 }  
 header h1 a:hover {
   text-decoration:none;
@@ -162,7 +166,7 @@ header #logo img {
   border-radius:4.5em;
   -moz-border-radius: 4.5em;
   -webkit-border-radius: 4.5em;
-  border: none;
+  border: 2px solid #FFF;
 }
 #follow-icons {
   font-size: 0.7em;
@@ -172,6 +176,9 @@ header #logo img {
 #follow-icons a {
   color: #ccc;
 } 
+#follow-icons a:hover {
+  color: #FF6F61;
+}
 #follow-icons span {
   vertical-align:top;
   margin-left:-0.15em;
@@ -182,7 +189,14 @@ header #logo img {
   line-height:1.9em;
 }
 header h6 {
-  margin-top:0.5em;
+  margin: 0;
+}
+header h6 a {
+  color: #FFF;
+}
+header h6 a:hover {
+  color: #FF6F61;
+  text-decoration: none;
 }
 
 /* Posts */
