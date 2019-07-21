@@ -247,6 +247,11 @@ h3.post-title {
   border-bottom: 1px solid #eee;
 }
 
+/* Comments */
+div#comments {
+  margin-top: 3em;
+}
+
 /* Footer */
 .pagination {
   margin-bottom:1em;
