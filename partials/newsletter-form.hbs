@@ -1,0 +1,15 @@
+<form data-members-form="subscribe">
+  <input data-members-email type="email" required placeholder="Enter your email" />
+  
+  {{#get "newsletters"}}
+    {{#foreach newsletters}}
+      <label>
+        <input type="checkbox" value="{{name}}" data-members-newsletter />
+        {{name}}
+      </label>
+    {{/foreach}}
+  {{/get}}
+  
+  <button type="submit">Subscribe</button>
+  <p data-members-error></p>
+</form>
