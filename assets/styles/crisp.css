@@ -139,9 +139,107 @@ hr{
 ul, ol {
   margin-left: 3em; 
 }
-input {
+
+.text-input {
   font-size:1em;
-  padding: 0.3em;
+  padding: 0.5em;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: #90c695;
+  box-shadow: 0 0 0 3px rgba(144, 198, 149, 0.1);
+}
+
+.text-input::placeholder {
+  color: #999;
+}
+
+button {
+  background: #90c695;
+  color: #fff;
+  border: none;
+  padding: 0.5em;
+  border-radius: 4px;
+  font-size: .9em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  width: 100%;
+}
+
+button:hover {
+  background: #7ab77f;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Subscribe Form Container */
+.subscribe-form {
+  background: #fff;
+  border: 1px solid #e1e8ed;
+  border-radius: 6px;
+  padding: 50px;
+  margin: 30px auto;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  max-width: 50%;
+  box-sizing: border-box;
+}
+
+/* Responsive: full width on smaller screens */
+@media (max-width: 768px) {
+  .subscribe-form {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+  }
+}
+
+/* Newsletter Options */
+.newsletter-options {
+  margin-bottom: 25px;
+}
+
+.newsletter-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 8px 0;
+  width: 100%;
+  gap: 8px; /* Use gap instead of margin for spacing */
+}
+
+.newsletter-checkbox {
+  margin: 0; /* Remove margins, let gap handle spacing */
+  padding: 0;
+  width: auto;
+  border: none;
+  accent-color: #90c695;
+  flex-shrink: 0;
+  appearance: checkbox !important; /* Add this back */
+  -webkit-appearance: checkbox !important; /* Add this back */
+  -moz-appearance: checkbox !important; /* Add Firefox prefix */
+}
+
+.newsletter-label {
+  font-size: .9em;
+  color: #333;
+  cursor: pointer;
+  user-select: none;
+  line-height: 1.4;
 }
 
 /* Sidebar */
