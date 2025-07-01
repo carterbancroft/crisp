@@ -208,6 +208,24 @@ button:disabled {
   }
 }
 
+/* Newsletter Form states */
+form.subscribe-form p.loading,
+form.subscribe-form p.success,
+form.subscribe-form p.error {
+  display: none;
+}
+
+form.loading p.loading,
+form.success p.success,
+form.error p.error {
+  display: block;
+}
+
+form.error p.errpr {
+  color: red;
+}
+
+
 /* Newsletter Options */
 .newsletter-options {
   margin-bottom: 25px;

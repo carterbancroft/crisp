@@ -20,23 +20,26 @@
   </div>
   
   <button type="submit">Subscribe</button>
-  <p data-members-error></p>
+
+  <p class="loading">⏲️ Subscribing...</p>
+  <p data-members-error" class="error"></p>
+  <p class="success">🎸 Success! Check your inbox to verify your email.</p>
 </form>
 
 <script>
-// Honeypot validation
 document.querySelector('.subscribe-form').addEventListener('submit', function(e) {
-    const honeypots = this.querySelectorAll('input[name="website"], input[name="phone"], input[name="company"]');
+  // Honeypot validation
+  const honeypots = this.querySelectorAll('input[name="website"], input[name="phone"], input[name="company"]');
 
-    for (let honeypot of honeypots) {
-        if (honeypot.value !== '') {
-            e.preventDefault();
-            e.stopPropagation();
-            e.stopImmediatePropagation();
-            console.log('Bot detected - form submission blocked');
-            return false;
-        }
+  for (let honeypot of honeypots) {
+    if (honeypot.value !== '') {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      // console.log('Bot submission');
+      return false;
     }
-    // If all honeypots are empty, allow normal Ghost form processing
+  }
+  // If all honeypots are empty, allow normal Ghost form processing
 });
 </script>
