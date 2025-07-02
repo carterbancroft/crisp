@@ -219,11 +219,11 @@ form.loading .newsletter-notifications p.loading,
 form.success .newsletter-notifications p.success,
 form.error .newsletter-notifications p.error {
   display: block;
+  margin-bottom: 0 !important;
 }
 
 .newsletter-notifications {
-  margin: auto;
-  
+  text-align:center;
 }
 
 
@@ -235,8 +235,6 @@ form.error .newsletter-notifications p.error {
 .newsletter-option {
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
-  padding: 8px 0;
   width: 100%;
   gap: 8px; /* Use gap instead of margin for spacing */
 }
