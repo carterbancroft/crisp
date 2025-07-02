@@ -235,6 +235,7 @@ form.error .newsletter-notifications p.error {
 .newsletter-option {
   display: flex;
   align-items: center;
+  margin-bottom: 8px;
   width: 100%;
   gap: 8px; /* Use gap instead of margin for spacing */
 }
