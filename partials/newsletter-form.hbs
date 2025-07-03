@@ -1,0 +1,48 @@
+<form data-members-form="subscribe" class="subscribe-form">
+  <input class="text-input" data-members-email type="email" required placeholder="Enter your email" />
+
+  <!-- Honeypot fields - hidden from users -->
+  <div style="position: absolute; left: -9999px; top: -9999px;">
+    <input type="text" name="internet_website_id" tabindex="-1" autocomplete="off" />
+    <input type="tel" name="phone_number_id" tabindex="-1" autocomplete="off" />
+    <input type="text" name="company_you_work_at_id" tabindex="-1" autocomplete="off" />
+  </div>
+
+  <div class="newsletter-options">
+    {{#get "newsletters"}}
+      {{#foreach newsletters}}
+        <div class="newsletter-option">
+            <input class="newsletter-checkbox" type="checkbox" value="{{name}}" data-members-newsletter id="newsletter-{{@index}}" checked="checked" />
+            <label class="newsletter-label" for="newsletter-{{@index}}">{{name}}</label>
+        </div>
+      {{/foreach}}
+    {{/get}}
+  </div>
+  
+  <button type="submit">Subscribe</button>
+
+  <div class="newsletter-notifications">
+    <p class="loading">⏳ Subscribing...</p>
+    <p class="success">🚀 Success! Check your inbox to verify your email.</p>
+    <p class="error">❌ Something's gone wrong.</p>
+    <p data-members-error class="error"></p>
+  </div>
+</form>
+
+<script>
+document.querySelector('.subscribe-form').addEventListener('submit', function(e) {
+  // Honeypot validation
+  const honeypots = this.querySelectorAll('input[name="website"], input[name="phone"], input[name="company"]');
+
+  for (let honeypot of honeypots) {
+    if (honeypot.value !== '') {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      // console.log('Bot submission');
+      return false;
+    }
+  }
+  // If all honeypots are empty, allow normal Ghost form processing
+});
+</script>
