@@ -3,6 +3,13 @@
     <p>Welcome back! It looks like you're already a member. If you'd like to add a subscription or make any changes...</p>
     <a href="#/portal/account/newsletters" class="preferences-button">Manage your subscription preferences</a>
   </div>
+
+  <script>
+  // Auto-redirect logged-in members to newsletter preferences
+  if (window.location.pathname.includes('subscribe')) {
+    window.location.hash = '#/portal/account/newsletters';
+  }
+  </script>
 {{else}}
   <p>If you're already a subscriber, don't use the form below. <a href="#/portal/signin">Click here</a> and follow the instructions to sign in and manage your subscription preferences.</p>
   
