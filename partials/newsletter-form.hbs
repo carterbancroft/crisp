@@ -32,7 +32,7 @@
 <script>
 document.querySelector('.subscribe-form').addEventListener('submit', function(e) {
   // Honeypot validation
-  const honeypots = this.querySelectorAll('input[name="website"], input[name="phone"], input[name="company"]');
+  const honeypots = this.querySelectorAll('input[name="internet_website_id"], input[name="phone_number_id"], input[name="company_you_work_at_id"]');
 
   for (let honeypot of honeypots) {
     if (honeypot.value !== '') {
