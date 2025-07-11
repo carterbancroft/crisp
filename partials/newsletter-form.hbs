@@ -1,7 +1,7 @@
 {{#if @member}}
-  <div class="member-preferences">
-    <p>Welcome back! It looks like you're already a member. If you'd like to add a subscription or make any changes...</p>
-    <a href="#/portal/account/newsletters" class="preferences-button">Manage your subscription preferences</a>
+  <div class="subscribe-form">
+    <p class="subscribe-welcome-back">Welcome back! You're already a subscriber. To add a subscription or make any changes...</p>
+    <a class="button" href="#/portal/account/newsletters" class="preferences-button">Manage your email preferences</a>
   </div>
 
   <script>
@@ -11,7 +11,9 @@
   }
   </script>
 {{else}}
-  <p>If you're already a subscriber, don't use the form below. <a href="#/portal/signin">Click here</a> and follow the instructions to sign in and manage your subscription preferences.</p>
+  <div class="info-note">
+    <span class="emoji">🔎</span> If you're already a subscriber, don't use the form below. <a href="#/portal/signin">Click here</a> to sign in and manage your subscription preferences.
+  </div>
   
   <form data-members-form="subscribe" class="subscribe-form">
     <input class="text-input" data-members-email type="email" required placeholder="Enter your email" />
@@ -34,7 +36,7 @@
       {{/get}}
     </div>
 
-    <button type="submit">Subscribe</button>
+    <button class="button" type="submit">Subscribe</button>
 
     <div class="newsletter-notifications">
       <p class="loading">⏳ Subscribing...</p>

@@ -160,7 +160,7 @@ ul, ol {
   color: #999;
 }
 
-button {
+.button {
   background: #90c695;
   color: #fff;
   border: none;
@@ -170,18 +170,25 @@ button {
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease;
   width: 100%;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+  font-weight: normal;
 }
 
-button:hover {
+.button:hover {
   background: #7ab77f;
   transform: translateY(-1px);
+  text-decoration: none;
+  font-weight: normal;
 }
 
-button:active {
+.button:active {
   transform: translateY(0);
 }
 
-button:disabled {
+.button:disabled {
   background: #ccc;
   cursor: not-allowed;
   transform: none;
@@ -197,6 +204,26 @@ button:disabled {
   box-shadow: 0 2px 4px rgba(0,0,0,0.04);
   max-width: 50%;
   box-sizing: border-box;
+}
+
+.info-note {
+  padding: 0.75rem;
+  margin: 1rem 0;
+  font-size: 0.9em;
+  color: #666;
+  background: rgba(144, 198, 149, 0.1);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.info-note .emoji {
+  margin-right: 0.5rem;
+  font-size: 1.1em;
+}
+
+.subscribe-welcome-back {
+  margin-top: 0;
+  text-align: center;
 }
 
 /* Responsive: full width on smaller screens */
