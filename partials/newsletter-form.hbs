@@ -1,48 +1,57 @@
-<form data-members-form="subscribe" class="subscribe-form">
-  <input class="text-input" data-members-email type="email" required placeholder="Enter your email" />
-
-  <!-- Honeypot fields - hidden from users -->
-  <div style="position: absolute; left: -9999px; top: -9999px;">
-    <input type="text" name="internet_website_id" tabindex="-1" autocomplete="off" />
-    <input type="tel" name="phone_number_id" tabindex="-1" autocomplete="off" />
-    <input type="text" name="company_you_work_at_id" tabindex="-1" autocomplete="off" />
+{{#if @member}}
+  <div class="member-preferences">
+    <p>Welcome back! It looks like you're already a member. If you'd like to add a subscription or make any changes...</p>
+    <a href="#/portal/account/newsletters" class="preferences-button">Manage your subscription preferences</a>
   </div>
-
-  <div class="newsletter-options">
-    {{#get "newsletters"}}
-      {{#foreach newsletters}}
-        <div class="newsletter-option">
-            <input class="newsletter-checkbox" type="checkbox" value="{{name}}" data-members-newsletter id="newsletter-{{@index}}" checked="checked" />
-            <label class="newsletter-label" for="newsletter-{{@index}}">{{name}}</label>
-        </div>
-      {{/foreach}}
-    {{/get}}
-  </div>
+{{else}}
+  <p>If you're already a subscriber, don't use the form below. <a href="#/portal/signin">Click here</a> and follow the instructions to sign in and manage your subscription preferences.</p>
   
-  <button type="submit">Subscribe</button>
+  <form data-members-form="subscribe" class="subscribe-form">
+    <input class="text-input" data-members-email type="email" required placeholder="Enter your email" />
 
-  <div class="newsletter-notifications">
-    <p class="loading">⏳ Subscribing...</p>
-    <p class="success">🚀 Success! Check your inbox to verify your email.</p>
-    <p class="error">❌ Something's gone wrong.</p>
-    <p data-members-error class="error"></p>
-  </div>
-</form>
+    <!-- Honeypot fields - hidden from users -->
+    <div style="position: absolute; left: -9999px; top: -9999px;">
+      <input type="text" name="internet_website_id" tabindex="-1" autocomplete="off" />
+      <input type="tel" name="phone_number_id" tabindex="-1" autocomplete="off" />
+      <input type="text" name="company_you_work_at_id" tabindex="-1" autocomplete="off" />
+    </div>
 
-<script>
-document.querySelector('.subscribe-form').addEventListener('submit', function(e) {
-  // Honeypot validation
-  const honeypots = this.querySelectorAll('input[name="internet_website_id"], input[name="phone_number_id"], input[name="company_you_work_at_id"]');
+    <div class="newsletter-options">
+      {{#get "newsletters"}}
+        {{#foreach newsletters}}
+          <div class="newsletter-option">
+              <input class="newsletter-checkbox" type="checkbox" value="{{name}}" data-members-newsletter id="newsletter-{{@index}}" checked="checked" />
+              <label class="newsletter-label" for="newsletter-{{@index}}">{{name}}</label>
+          </div>
+        {{/foreach}}
+      {{/get}}
+    </div>
 
-  for (let honeypot of honeypots) {
-    if (honeypot.value !== '') {
-      e.preventDefault();
-      e.stopPropagation();
-      e.stopImmediatePropagation();
-      // console.log('Bot submission');
-      return false;
+    <button type="submit">Subscribe</button>
+
+    <div class="newsletter-notifications">
+      <p class="loading">⏳ Subscribing...</p>
+      <p class="success">🚀 Success! Check your inbox to verify your email.</p>
+      <p class="error">❌ Something's gone wrong.</p>
+      <p data-members-error class="error"></p>
+    </div>
+  </form>
+
+  <script>
+  document.querySelector('.subscribe-form').addEventListener('submit', function(e) {
+    // Honeypot validation
+    const honeypots = this.querySelectorAll('input[name="internet_website_id"], input[name="phone_number_id"], input[name="company_you_work_at_id"]');
+
+    for (let honeypot of honeypots) {
+      if (honeypot.value !== '') {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        // console.log('Bot submission');
+        return false;
+      }
     }
-  }
-  // If all honeypots are empty, allow normal Ghost form processing
-});
-</script>
+    // If all honeypots are empty, allow normal Ghost form processing
+  });
+  </script>
+{{/if}}
